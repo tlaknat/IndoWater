@@ -31,6 +31,8 @@ return function (ContainerBuilder $containerBuilder) {
                 'secret' => $_ENV['JWT_SECRET'] ?? 'your-secret-key',
                 'ttl' => (int) ($_ENV['JWT_TTL'] ?? 3600),
                 'refresh_ttl' => (int) ($_ENV['JWT_REFRESH_TTL'] ?? 604800),
+                'issuer' => $_ENV['JWT_ISSUER'] ?? 'indowater-api',
+                'expiration' => (int) ($_ENV['JWT_EXPIRATION'] ?? 3600),
             ],
             'mail' => [
                 'driver' => $_ENV['MAIL_DRIVER'] ?? 'smtp',
